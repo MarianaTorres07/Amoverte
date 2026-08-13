@@ -14,9 +14,10 @@ interface ContactFormData {
 
 const motivos = [
   'Fisioterapia deportiva',
-  'Traumatológica',
-  'Neurológica',
-  'Pediátrica',
+  'Fisioterapia Ortopédica',
+  'Readaptación',
+  'Geriátrica',
+  'Rehabilitación',
   'No estoy seguro/a',
 ];
 
@@ -93,8 +94,8 @@ function Contact() {
 
           <Box sx={{ display: 'grid', gap: 3 }}>
             {[
-              { icon: <LocationOnIcon sx={{ color: 'secondary.main' }} />, title: 'Av. Colón 1452, Local 3', sub: 'Córdoba Capital, Argentina' },
-              { icon: <PhoneIcon sx={{ color: 'secondary.main' }} />, title: '+54 351 555-0182', sub: 'Lun a vie, 8:00–20:00' },
+              { icon: <LocationOnIcon sx={{ color: 'secondary.main' }} />, title: 'Calle 49 285 Cordemex , Mérida, Mexico', sub: 'Mérida, Yucatán' },
+              { icon: <PhoneIcon sx={{ color: 'secondary.main' }} />, title: '+52 999 782 1788', sub: 'Lun a vie, 8:00–20:00' },
               { icon: <EmailIcon sx={{ color: 'secondary.main' }} />, title: 'hola@amoverte.com.ar', sub: 'Turnos, consultas y obras sociales' },
             ].map((item) => (
               <Box key={item.title} sx={{ display: 'flex', gap: 2, alignItems: 'flex-start' }}>

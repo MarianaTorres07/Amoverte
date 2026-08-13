@@ -22,16 +22,16 @@ const services: Service[] = [
     gradient: 'linear-gradient(160deg, #5B52E3 0%, #423AC4 100%)',
   },
   {
-    id: 'traumatologica',
-    title: 'Traumatológica',
+    id: 'ortopédica',
+    title: 'Fisioterapia Ortopédica',
     summary: 'Rehabilitación post-quirúrgica de hombro, cadera y columna con protocolo progresivo.',
     details:
       'Acompañamos cada etapa post-quirúrgica, desde la movilización temprana hasta la recuperación funcional completa, en coordinación directa con el equipo traumatológico tratante.',
     gradient: 'linear-gradient(160deg, #1B1B2B 0%, #34324f 100%)',
   },
   {
-    id: 'neurologica',
-    title: 'Neurológica y pediátrica',
+    id: 'readaptacion',
+    title: 'Readaptación',
     summary: 'Recuperación motora en ACV y Parkinson, y seguimiento del desarrollo infantil temprano.',
     details:
       'Programas individualizados de neurorehabilitación para adultos post-ACV o con Parkinson, y seguimiento del desarrollo psicomotor en la primera infancia.',
@@ -46,8 +46,8 @@ const services: Service[] = [
     gradient: 'linear-gradient(160deg, #423AC4 0%, #2B2570 100%)',
   },
   {
-    id: 'oncologica',
-    title: 'Rehabilitación oncológica',
+    id: 'rehabilitacion',
+    title: 'Rehabilitación',
     summary: 'Recuperación funcional durante y después de tratamientos oncológicos.',
     details:
       'Ejercicio terapéutico supervisado y manejo del linfedema, adaptado a cada etapa del tratamiento oncológico, en coordinación con el equipo médico tratante.',

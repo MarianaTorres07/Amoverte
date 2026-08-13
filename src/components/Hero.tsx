@@ -52,7 +52,7 @@ function Hero() {
               mb: 2,
             }}
           >
-            Fisioterapia clínica
+            Centro de Fisioterapia y Rehabilitación
           </Typography>
 
           <Typography
