@@ -3,14 +3,7 @@ import {Box, Typography, IconButton, Dialog, DialogTitle, DialogContent,} from '
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import CloseIcon from '@mui/icons-material/Close';
-
-interface Service {
-  id: string;
-  title: string;
-  summary: string;
-  details: string;
-  gradient: string;
-}
+import type { Service } from '../types';
 
 const services: Service[] = [
   {
@@ -63,41 +56,50 @@ function Services() {
     const el = scrollRef.current;
     if (!el) return;
 
-    const amount = 340;
+    const amount = (el.firstElementChild as HTMLElement)?.offsetWidth || 340;
     const maxScroll = el.scrollWidth - el.clientWidth;
 
     if (direction === 'right') {
       if (el.scrollLeft >= maxScroll - 5) {
         el.scrollTo({ left: 0, behavior: 'smooth' });
       } else {
-        el.scrollBy({ left: amount, behavior: 'smooth' });
+        el.scrollBy({ left: amount + 24, behavior: 'smooth' });
       }
     } else {
       if (el.scrollLeft <= 5) {
         el.scrollTo({ left: maxScroll, behavior: 'smooth' });
       } else {
-        el.scrollBy({ left: -amount, behavior: 'smooth' });
+        el.scrollBy({ left: -(amount + 24), behavior: 'smooth' });
       }
     }
   };
 
   return (
-    <Box component="section" id="servicios" sx={{ py: { xs: 10, md: 15 } }}>
-      <Box sx={{ maxWidth: 1180, mx: 'auto', px: '8vw' }}>
-        <Box sx={{ textAlign: 'center', mb: 5 }}>
+    <Box component="section" id="servicios" sx={{ py: { xs: 8, md: 14 }, width: '100%', bgcolor: '#FAF9F6' }}>
+      <Box sx={{ maxWidth: 1440, mx: 'auto', px: { xs: 3, sm: 4, md: 6, lg: 8 } }}>
+        <Box sx={{ maxWidth: 700, mb: { xs: 5, md: 7 }, mx: { xs: 'auto', md: 0 }, textAlign: { xs: 'center', md: 'left' } }}>
           <Typography
             sx={{
               fontFamily: "'Space Mono', monospace",
-              fontSize: '0.72rem',
+              fontSize: '0.75rem',
               letterSpacing: '0.14em',
               textTransform: 'uppercase',
               color: 'primary.dark',
-              mb: 1,
+              fontWeight: 700,
+              mb: 1.5,
             }}
           >
             Nuestros servicios
           </Typography>
-          <Typography variant="h2" sx={{ fontSize: { xs: '1.8rem', md: '2.2rem' } }}>
+          <Typography
+            variant="h2"
+            sx={{
+              fontSize: { xs: '1.8rem', sm: '2.3rem', md: '2.8rem' },
+              fontWeight: 700,
+              letterSpacing: '-0.02em',
+              color: '#1B1B2B',
+            }}
+          >
             Tratamos con precisión, área por área.
           </Typography>
         </Box>
@@ -106,12 +108,17 @@ function Services() {
           ref={scrollRef}
           sx={{
             display: 'flex',
-            gap: 3,
+            gap: { xs: 2.5, sm: 3, md: 3.5 },
             overflowX: 'auto',
             scrollSnapType: 'x mandatory',
-            pb: 2,
-            '&::-webkit-scrollbar': { height: 6 },
-            '&::-webkit-scrollbar-thumb': { bgcolor: 'divider', borderRadius: 3 },
+            scrollBehavior: 'smooth',
+            py: 1,
+            px: 0.5,
+            msOverflowStyle: 'none',
+            scrollbarWidth: 'none',
+            '&::-webkit-scrollbar': {
+              display: 'none',
+            },
           }}
         >
           {services.map((service) => (
@@ -119,25 +126,38 @@ function Services() {
               key={service.id}
               onClick={() => setSelectedService(service)}
               sx={{
-                flex: '0 0 300px',
+                flex: '0 0 auto',
+                width: {
+                  xs: '84vw',
+                  sm: 'calc(50% - 12px)',
+                  md: 'calc(33.333% - 16px)',
+                  lg: 'calc(25% - 18px)',
+                },
+                minWidth: { xs: 260, sm: 280 },
                 scrollSnapAlign: 'start',
                 cursor: 'pointer',
-                bgcolor: 'background.default',
-                border: '1px solid',
-                borderColor: 'divider',
-                borderRadius: 4,
+                bgcolor: '#FFFFFF',
+                border: '1.5px solid',
+                borderColor: 'rgba(0,0,0,0.08)',
+                borderRadius: 1.5,
                 overflow: 'hidden',
-                transition: 'transform 0.25s ease, box-shadow 0.25s ease',
+                display: 'flex',
+                flexDirection: 'column',
+                boxShadow: '0 2px 12px rgba(0,0,0,0.03)',
+                transition: 'transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease',
                 '&:hover': {
                   transform: 'translateY(-6px)',
-                  boxShadow: '0 24px 44px -22px rgba(66,58,196,0.3)',
+                  boxShadow: '0 16px 36px rgba(66,58,196,0.15)',
+                  borderColor: 'primary.main',
                 },
               }}
             >
-              <Box sx={{ aspectRatio: '4 / 3', background: service.gradient }} />
-              <Box sx={{ p: 3 }}>
-                <Typography sx={{ fontWeight: 600, mb: 1 }}>{service.title}</Typography>
-                <Typography sx={{ fontSize: '0.9rem', color: 'text.secondary' }}>
+              <Box sx={{ aspectRatio: '16 / 9', background: service.gradient }} />
+              <Box sx={{ p: { xs: 2.5, md: 3 }, display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+                <Typography sx={{ fontWeight: 700, fontSize: '1.1rem', mb: 1, color: '#1B1B2B' }}>
+                  {service.title}
+                </Typography>
+                <Typography sx={{ fontSize: '0.88rem', color: 'text.secondary', lineHeight: 1.55 }}>
                   {service.summary}
                 </Typography>
               </Box>
@@ -145,19 +165,37 @@ function Services() {
           ))}
         </Box>
 
-        {/* Arrows now centered below the carousel, always visible (mobile + desktop) */}
+        {/* Carousel Navigation Arrows */}
         <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, mt: 4 }}>
           <IconButton
             onClick={() => scroll('left')}
-            aria-label="Anterior"
-            sx={{ border: '1px solid', borderColor: 'divider' }}
+            aria-label="Anterior servicio"
+            sx={{
+              width: 44,
+              height: 44,
+              bgcolor: '#FFFFFF',
+              border: '1.5px solid',
+              borderColor: 'rgba(0,0,0,0.12)',
+              borderRadius: 1,
+              color: 'primary.main',
+              '&:hover': { bgcolor: 'primary.main', color: '#FFFFFF', borderColor: 'primary.main' },
+            }}
           >
             <ArrowBackIosNewIcon fontSize="small" />
           </IconButton>
           <IconButton
             onClick={() => scroll('right')}
-            aria-label="Siguiente"
-            sx={{ border: '1px solid', borderColor: 'divider' }}
+            aria-label="Siguiente servicio"
+            sx={{
+              width: 44,
+              height: 44,
+              bgcolor: '#FFFFFF',
+              border: '1.5px solid',
+              borderColor: 'rgba(0,0,0,0.12)',
+              borderRadius: 1,
+              color: 'primary.main',
+              '&:hover': { bgcolor: 'primary.main', color: '#FFFFFF', borderColor: 'primary.main' },
+            }}
           >
             <ArrowForwardIosIcon fontSize="small" />
           </IconButton>

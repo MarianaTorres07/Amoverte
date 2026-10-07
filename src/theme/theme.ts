@@ -4,6 +4,7 @@ const theme = createTheme({
     palette: {
         background:{
             default: '#FAFAF8',
+            paper: '#FFFFFF',
         },
         text:{
             primary: '#1B1B1B', 
@@ -11,7 +12,8 @@ const theme = createTheme({
         },
         primary:{
             main: '#5B52E2',
-            dark: '#423AC4',
+            dark: '#2B2570',
+            light: '#EFEEFC',
         },
         secondary:{
             main: '#C6F135',
@@ -32,7 +34,7 @@ const theme = createTheme({
         },
     },
     shape:{
-        borderRadius: 20,
+        borderRadius: 8,
     },
 });
 
