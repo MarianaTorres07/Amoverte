@@ -2,6 +2,8 @@ import { useState } from 'react';
 import {Box, Typography, Button, Dialog, DialogTitle, DialogContent, IconButton, Grid,} from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import aboutHeroImg from '../assets/photosAmoverte/Tezza-7774.jpg';
+import progressWallImg from '../assets/photosAmoverte/Tezza-5089.jpg';
 
 function About() {
   const [modalOpen, setModalOpen] = useState<boolean>(false);
@@ -20,11 +22,41 @@ function About() {
             <Box sx={{ position: 'relative' }}>
               <Box
                 sx={{
-                  aspectRatio: '4 / 4.2',
-                  borderRadius: 2,
-                  background: 'linear-gradient(160deg, #5B52E3 0%, #423AC4 100%)',
+                  position: 'relative',
+                  aspectRatio: { xs: '4 / 3.5', sm: '4 / 4.2' },
+                  borderRadius: 3,
+                  overflow: 'hidden',
+                  boxShadow: '0 20px 45px -10px rgba(43,37,112,0.28)',
+                  border: '2px solid rgba(255,255,255,0.8)',
+                  bgcolor: '#2B2570',
                 }}
-              />
+              >
+                <Box
+                  component="img"
+                  src={aboutHeroImg}
+                  alt="Fisioterapeuta y paciente en Amoverte"
+                  sx={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    objectPosition: 'center 15%',
+                    display: 'block',
+                    transition: 'transform 0.5s ease',
+                    '&:hover': {
+                      transform: 'scale(1.03)',
+                    },
+                  }}
+                />
+                <Box
+                  sx={{
+                    position: 'absolute',
+                    inset: 0,
+                    background:
+                      'linear-gradient(180deg, rgba(43,37,112,0.05) 0%, rgba(43,37,112,0.4) 100%)',
+                    pointerEvents: 'none',
+                  }}
+                />
+              </Box>
               <Box
                 sx={{
                   position: { xs: 'static', md: 'absolute' },
@@ -115,15 +147,61 @@ function About() {
         onClose={handleClose}
         maxWidth="sm"
         fullWidth
+        slotProps={{
+          paper: {
+            sx: {
+              borderRadius: { xs: 2.5, sm: 3 },
+              m: { xs: 1.5, sm: 3 },
+              overflow: 'hidden',
+            },
+          },
+        }}
       >
-        <DialogTitle sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          Nuestra historia
-          <IconButton onClick={handleClose} aria-label="Cerrar">
-            <CloseIcon />
+        <DialogTitle
+          sx={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            px: { xs: 2.5, sm: 3 },
+            py: 2,
+            fontFamily: "'Space Grotesk', sans-serif",
+            fontWeight: 700,
+          }}
+        >
+          <span>Nuestra historia</span>
+          <IconButton
+            onClick={handleClose}
+            aria-label="Cerrar modal"
+            sx={{
+              width: 36,
+              height: 36,
+              border: '1.5px solid rgba(0,0,0,0.12)',
+              bgcolor: 'rgba(255,255,255,0.95)',
+              color: '#1B1B2B',
+              '&:hover': {
+                bgcolor: '#F5F4F0',
+                borderColor: 'primary.main',
+              },
+            }}
+          >
+            <CloseIcon sx={{ fontSize: 20 }} />
           </IconButton>
         </DialogTitle>
 
         <DialogContent dividers>
+          <Box
+            component="img"
+            src={progressWallImg}
+            alt="Instalaciones de Amoverte - Progress, not perfection"
+            sx={{
+              width: '100%',
+              height: 200,
+              objectFit: 'cover',
+              borderRadius: 2,
+              mb: 2.5,
+              border: '1px solid rgba(0,0,0,0.08)',
+            }}
+          />
           <Typography sx={{ color: 'text.secondary', mb: 2 }}>
             Todo empezó en un consultorio de dos ambientes, con una camilla y
             una convicción: la rehabilitación real no se resuelve con

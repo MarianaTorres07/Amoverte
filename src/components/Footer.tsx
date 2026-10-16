@@ -20,15 +20,10 @@ function Footer() {
         color: '#FFFFFF',
         pt: { xs: 4, md: 5 },
         pb: { xs: 3, md: 4 },
+        px: { xs: 2, md: 5 },
       }}
     >
-      <Box
-        sx={{
-          maxWidth: 1440,
-          mx: 'auto',
-          px: { xs: 3, sm: 4, md: 6, lg: 8 },
-        }}
-      >
+      <Box sx={{ width: '100%' }}>
         <Stack
           direction={{ xs: 'column', sm: 'row' }}
           spacing={{ xs: 3, sm: 0 }}
@@ -36,6 +31,7 @@ function Footer() {
             justifyContent: 'space-between',
             alignItems: { xs: 'flex-start', sm: 'center' },
             mb: 3,
+            width: '100%',
           }}
         >
           <Box
@@ -52,10 +48,11 @@ function Footer() {
               src={logoBlanco}
               alt="Amoverte Fisioterapia"
               sx={{
-                height: { xs: 32, sm: 36, md: 40 },
-                maxHeight: 44,
+                height: { xs: 34, sm: 40, md: 44 },
+                maxHeight: 46,
                 width: 'auto',
                 objectFit: 'contain',
+                display: 'block',
               }}
             />
           </Box>

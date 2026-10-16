@@ -1,4 +1,4 @@
-import { useState, type FormEvent, type ChangeEvent } from 'react';
+import { useState, useEffect, type FormEvent, type ChangeEvent } from 'react';
 import { Box, Typography, TextField, MenuItem, Button, Alert,} from '@mui/material';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import PhoneIcon from '@mui/icons-material/Phone';
@@ -6,11 +6,16 @@ import EmailIcon from '@mui/icons-material/Email';
 import type { ContactFormData } from '../types';
 
 const motivos = [
-  'Fisioterapia deportiva',
-  'Fisioterapia Ortopédica',
-  'Readaptación',
-  'Geriátrica',
-  'Rehabilitación',
+  'Valoración + Tratamiento',
+  'Terapia Funcional para Adulto Mayor',
+  'Terapia Geriátrica (Adulto Mayor)',
+  'Fisioterapia Deportiva',
+  'Readaptación Deportiva',
+  'Terapia ATM (Articulación Temporomandibular)',
+  'Terapia de Mano y Dedos',
+  'Terapia Ortopédica',
+  'Descarga Muscular Completa',
+  'Descarga Muscular por Zona',
   'No estoy seguro/a',
 ];
 
@@ -25,6 +30,17 @@ const initialFormState: ContactFormData = {
 function Contact() {
   const [formData, setFormData] = useState<ContactFormData>(initialFormState);
   const [submitted, setSubmitted] = useState<boolean>(false);
+
+  useEffect(() => {
+    const handleSelectService = (e: Event) => {
+      const customEvent = e as CustomEvent<string>;
+      if (customEvent.detail) {
+        setFormData((prev) => ({ ...prev, motivo: customEvent.detail }));
+      }
+    };
+    window.addEventListener('select-service', handleSelectService);
+    return () => window.removeEventListener('select-service', handleSelectService);
+  }, []);
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
