@@ -22,6 +22,8 @@ import cesarImg from '../assets/photosEquipo/Cesar Balam Avila.jpeg';
 import dianaImg from '../assets/photosEquipo/Diana Basto Sanchez.jpeg';
 import abelImg from '../assets/photosEquipo/Abel Ang Martin.jpeg';
 import williamImg from '../assets/photosEquipo/William León Duran.jpeg';
+import americaImg from '../assets/photosEquipo/America.jpeg';
+import fernandaImg from '../assets/photosEquipo/Maria Fernanda.jpeg';
 
 const team: TeamMember[] = [
   {
@@ -38,7 +40,7 @@ const team: TeamMember[] = [
       'Descarga Muscular y Terapia Manual',
       'Acondicionamiento Funcional Progresivo',
     ],
-    locations: ['Amoverte Cordemex', 'Amoverte Las Américas'],
+    locations: ['Amoverte Las Américas'],
   },
   {
     id: 'cesar',
@@ -54,7 +56,7 @@ const team: TeamMember[] = [
       'Optimización del Gesto Deportivo',
       'Descarga Muscular Profunda',
     ],
-    locations: ['Amoverte La Florida', 'Amoverte Cordemex'],
+    locations: ['Amoverte Cordemex'],
   },
   {
     id: 'diana',
@@ -70,7 +72,7 @@ const team: TeamMember[] = [
       'Rehabilitación de Mano, Muñeca y Dedos',
       'Manejo de Artrosis y Artritis',
     ],
-    locations: ['Amoverte Cordemex', 'Amoverte La Florida'],
+    locations: ['Amoverte Cordemex', 'Amoverte Las Américas', 'Amoverte La Florida'],
   },
   {
     id: 'abel',
@@ -86,7 +88,7 @@ const team: TeamMember[] = [
       'Descompresión Cervical y Postural',
       'Fisioterapia Deportiva y Descargas',
     ],
-    locations: ['Amoverte La Florida', 'Amoverte Las Américas'],
+    locations: ['Amoverte Cordemex', 'Amoverte La Florida'],
   },
   {
     id: 'william',
@@ -102,7 +104,39 @@ const team: TeamMember[] = [
       'Descarga Muscular y Recuperación Tisular',
       'Reeducación Postural Global',
     ],
-    locations: ['Amoverte Las Américas', 'Amoverte Cordemex'],
+    locations: ['Amoverte Cordemex', 'Amoverte Las Américas'],
+  },
+  {
+    id: 'america',
+    name: 'América',
+    role: 'Fisioterapeuta Geriátrica',
+    description:
+      'Especialista en atención y terapia funcional para el adulto mayor, equilibrio, marcha y autonomía.',
+    image: americaImg,
+    bio: 'América cuenta con un enfoque cálido y especializado en fisioterapia geriátrica. Su trabajo se enfoca en conservar y mejorar la movilidad de los adultos mayores, fortaleciendo el equilibrio, la coordinación y la marcha para prevenir caídas y favorecer una vida activa e independiente.',
+    specialties: [
+      'Terapia Funcional para Adulto Mayor',
+      'Fisioterapia Geriátrica Integral',
+      'Entrenamiento de Equilibrio y Prevención de Caídas',
+      'Movilidad Articular y Preservación de la Autonomía',
+    ],
+    locations: ['Amoverte Cordemex'],
+  },
+  {
+    id: 'fernanda',
+    name: 'María Fernanda Ferrer Rabanales',
+    role: 'Fisioterapeuta Deportiva',
+    description:
+      'Especialista en prevención, rehabilitación de lesiones deportivas, terapia manual y readaptación física.',
+    image: fernandaImg,
+    bio: 'María Fernanda se especializa en el tratamiento de lesiones musculoesqueléticas y deportivas. Combina la evaluación funcional precisa, la terapia manual y el ejercicio correctivo progresivo para guiar a deportistas y personas en movimiento hacia una recuperación segura y un retorno óptimo a sus actividades.',
+    specialties: [
+      'Fisioterapia Deportiva y Lesiones Agudas',
+      'Readaptación Funcional y Retorno al Deporte',
+      'Descarga Muscular y Terapia Manual',
+      'Control Neuromuscular y Biomecánica',
+    ],
+    locations: ['Amoverte Cordemex'],
   },
 ];
 
@@ -200,7 +234,8 @@ function Team() {
       component="section"
       id="equipo"
       sx={{
-        py: { xs: 8, md: 14 },
+        pt: { xs: 2.5, md: 3 },
+        pb: { xs: 8, md: 14 },
         width: '100%',
         bgcolor: '#FAF9F6',
         overflow: 'hidden',

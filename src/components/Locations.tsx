@@ -28,6 +28,8 @@ import cesarImg from '../assets/photosEquipo/Cesar Balam Avila.jpeg';
 import dianaImg from '../assets/photosEquipo/Diana Basto Sanchez.jpeg';
 import abelImg from '../assets/photosEquipo/Abel Ang Martin.jpeg';
 import williamImg from '../assets/photosEquipo/William León Duran.jpeg';
+import americaImg from '../assets/photosEquipo/America.jpeg';
+import fernandaImg from '../assets/photosEquipo/Maria Fernanda.jpeg';
 
 import cordemexPhoto from '../assets/photosAmoverte/Tezza-8780.jpg';
 import floridaPhoto from '../assets/photosAmoverte/Tezza-3868.jpg';
@@ -41,7 +43,7 @@ const locations: LocationItem[] = [
     address: 'C. 49 285, Cordemex, 97115 Mérida, Yuc.',
     mapsUrl: 'https://maps.app.goo.gl/VHat94DD8KDB6nB36',
     mapEmbedUrl:
-      'https://maps.google.com/maps?q=C.+49+285,+Cordemex,+97115+M%C3%A9rida,+Yuc.&t=&z=15&ie=UTF8&iwloc=&output=embed',
+      'https://maps.google.com/maps?q=AMOVERTE+FISIOTERAPIA+Cordemex&t=&z=16&ie=UTF8&iwloc=&output=embed',
     photo: cordemexPhoto,
     phone: '+52 951 262 8921',
     phoneRaw: '+529512628921',
@@ -50,45 +52,16 @@ const locations: LocationItem[] = [
       'https://www.instagram.com/amoverte.mx?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==',
     staff: [
       {
-        id: 'diego',
-        name: 'Diego Canul González',
+        id: 'william',
+        name: 'William Alejandro León Durán',
         role: 'Fisioterapeuta Deportivo',
-        image: diegoImg,
+        image: williamImg,
       },
       {
         id: 'diana',
         name: 'Diana Laura Basto Sanchez',
         role: 'Fisioterapeuta Geriátrica - Miembro Superior',
         image: dianaImg,
-      },
-      {
-        id: 'william',
-        name: 'William Alejandro León Durán',
-        role: 'Fisioterapeuta Deportivo',
-        image: williamImg,
-      },
-    ],
-  },
-  {
-    id: 'la-florida',
-    name: 'Amoverte La Florida',
-    tagline: 'Fisioterapia y Rehabilitación Especializada',
-    address: 'C 23A 193, La Florida, 97138 Mérida, Yuc.',
-    mapsUrl: 'https://maps.app.goo.gl/wLdCjSZiuBcpyNsHA',
-    mapEmbedUrl:
-      'https://maps.google.com/maps?q=C+23A+193,+La+Florida,+97138+M%C3%A9rida,+Yuc.&t=&z=15&ie=UTF8&iwloc=&output=embed',
-    photo: floridaPhoto,
-    phone: '+52 951 262 8921',
-    phoneRaw: '+529512628921',
-    instagram: '@amoverte.mx',
-    instagramUrl:
-      'https://www.instagram.com/amoverte.mx?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==',
-    staff: [
-      {
-        id: 'cesar',
-        name: 'Cesar Augusto Balam Avila',
-        role: 'Fisioterapeuta Deportivo',
-        image: cesarImg,
       },
       {
         id: 'abel',
@@ -97,10 +70,64 @@ const locations: LocationItem[] = [
         image: abelImg,
       },
       {
+        id: 'america',
+        name: 'América',
+        role: 'Fisioterapeuta Geriátrica',
+        image: americaImg,
+      },
+      {
+        id: 'fernanda',
+        name: 'María Fernanda Ferrer Rabanales',
+        role: 'Fisioterapeuta Deportiva',
+        image: fernandaImg,
+      },
+      {
+        id: 'cesar',
+        name: 'Cesar Augusto Balam Avila',
+        role: 'Fisioterapeuta Deportivo',
+        image: cesarImg,
+      },
+    ],
+  },
+  {
+    id: 'la-florida',
+    name: 'Amoverte La Florida',
+    tagline: 'Fisioterapia y Rehabilitación Especializada',
+    address: 'C 23A 193, La Florida, 97138 Mérida, Yuc.',
+    mapsUrl:
+      'https://www.google.com/maps/place/AMOVERTE+FISIOTERAPIA+LA+FLORIDA/@21.0098001,-89.5730774,17z/data=!3m1!4b1!4m6!3m5!1s0x8f5675782166c989:0xa66517f147883a2f!8m2!3d21.0098001!4d-89.5730774!16s%2Fg%2F11zz8xc1y4',
+    mapEmbedUrl:
+      'https://maps.google.com/maps?q=AMOVERTE+FISIOTERAPIA+LA+FLORIDA&t=&z=16&ie=UTF8&iwloc=&output=embed',
+    photo: floridaPhoto,
+    phone: '+52 951 262 8921',
+    phoneRaw: '+529512628921',
+    instagram: '@amoverte.mx',
+    instagramUrl:
+      'https://www.instagram.com/amoverte.mx?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==',
+    staff: [
+      {
+        id: 'laucin',
+        name: 'Juan Laucin',
+        role: 'Fisioterapeuta',
+        image: '',
+      },
+      {
+        id: 'bruno',
+        name: 'Bruno Rosado',
+        role: 'Fisioterapeuta',
+        image: '',
+      },
+      {
         id: 'diana',
         name: 'Diana Laura Basto Sanchez',
         role: 'Fisioterapeuta Geriátrica - Miembro Superior',
         image: dianaImg,
+      },
+      {
+        id: 'abel',
+        name: 'Abel Ang Martin',
+        role: 'Fisioterapeuta Deportivo - ATM',
+        image: abelImg,
       },
     ],
   },
@@ -110,9 +137,10 @@ const locations: LocationItem[] = [
     tagline: 'Fisioterapia y Readaptación Funcional',
     address:
       'C. 55 1010-c-120 y 132, Fraccionamiento Las Américas, 97302 Mérida, Yuc.',
-    mapsUrl: 'https://maps.app.goo.gl/9BEgaZencaScvzMER8',
+    mapsUrl:
+      'https://www.google.com/maps/search/?api=1&query=C.+55+1010-c-120+y+132,+Fraccionamiento+Las+Am%C3%A9ricas,+97302+M%C3%A9rida,+Yuc.',
     mapEmbedUrl:
-      'https://maps.google.com/maps?q=C.+55+1010-c-120+y+132,+Fraccionamiento+Las+Am%C3%A9ricas,+97302+M%C3%A9rida,+Yuc.&t=&z=15&ie=UTF8&iwloc=&output=embed',
+      'https://maps.google.com/maps?q=C.+55+1010-c-120+y+132,+Fraccionamiento+Las+Am%C3%A9ricas,+97302+M%C3%A9rida,+Yuc.&t=&z=16&ie=UTF8&iwloc=&output=embed',
     photo: americasPhoto,
     phone: '+52 951 262 8921',
     phoneRaw: '+529512628921',
@@ -127,16 +155,22 @@ const locations: LocationItem[] = [
         image: williamImg,
       },
       {
+        id: 'diana',
+        name: 'Diana Laura Basto Sanchez',
+        role: 'Fisioterapeuta Geriátrica - Miembro Superior',
+        image: dianaImg,
+      },
+      {
+        id: 'abby',
+        name: 'Abby',
+        role: 'Fisioterapeuta',
+        image: '',
+      },
+      {
         id: 'diego',
         name: 'Diego Canul González',
         role: 'Fisioterapeuta Deportivo',
         image: diegoImg,
-      },
-      {
-        id: 'abel',
-        name: 'Abel Ang Martin',
-        role: 'Fisioterapeuta Deportivo - ATM',
-        image: abelImg,
       },
     ],
   },
@@ -593,7 +627,18 @@ function Locations() {
                           }}
                         >
                           {loc.staff.map((s) => (
-                            <Avatar key={s.id} alt={s.name} src={s.image} />
+                            <Avatar
+                              key={s.id}
+                              alt={s.name}
+                              src={s.image || undefined}
+                              sx={{
+                                bgcolor: 'primary.main',
+                                color: '#FFFFFF',
+                                fontWeight: 700,
+                              }}
+                            >
+                              {s.name.charAt(0)}
+                            </Avatar>
                           ))}
                         </AvatarGroup>
 
@@ -663,14 +708,20 @@ function Locations() {
                               }}
                             >
                               <Avatar
-                                src={staffMember.image}
+                                src={staffMember.image || undefined}
                                 alt={staffMember.name}
                                 sx={{
                                   width: 38,
                                   height: 38,
                                   border: '1.5px solid #5B52E2',
+                                  bgcolor: '#2B2570',
+                                  color: '#FFFFFF',
+                                  fontWeight: 700,
+                                  fontSize: '0.85rem',
                                 }}
-                              />
+                              >
+                                {staffMember.name.slice(0, 2).toUpperCase()}
+                              </Avatar>
                               <Box sx={{ minWidth: 0 }}>
                                 <Typography
                                   sx={{

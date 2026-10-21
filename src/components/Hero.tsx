@@ -16,7 +16,7 @@ const stats: Stat[] = [
   { value: '+3.400', label: 'pacientes tratados en Mérida' },
   { value: '92%', label: 'alcanza su objetivo funcional' },
   { value: '3 sedes', label: 'Cordemex · Américas · La Florida' },
-  { value: '45 min', label: 'por sesión, sin prisas' },
+  { value: '50-60 min', label: 'de atención personalizada' },
 ];
 
 function Hero() {

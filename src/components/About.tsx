@@ -117,7 +117,7 @@ function About() {
             </Typography>
 
             <Typography sx={{ color: 'text.secondary', fontSize: { xs: '0.95rem', md: '1.05rem' }, lineHeight: 1.6, mb: 3 }}>
-              Amoverte nació en 2013 con una idea simple: ningún cuerpo se
+              Amoverte nació en 2019 con una idea simple: ningún cuerpo se
               recupera igual que otro. Por eso cada tratamiento empieza con una
               evaluación funcional completa antes de definir un solo ejercicio.
             </Typography>

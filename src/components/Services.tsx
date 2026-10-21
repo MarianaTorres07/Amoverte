@@ -25,6 +25,8 @@ import cesarImg from '../assets/photosEquipo/Cesar Balam Avila.jpeg';
 import dianaImg from '../assets/photosEquipo/Diana Basto Sanchez.jpeg';
 import abelImg from '../assets/photosEquipo/Abel Ang Martin.jpeg';
 import williamImg from '../assets/photosEquipo/William León Duran.jpeg';
+import americaImg from '../assets/photosEquipo/America.jpeg';
+import fernandaImg from '../assets/photosEquipo/Maria Fernanda.jpeg';
 
 import valoracionImg from '../assets/photosAmoverte/Tezza-4934.jpg';
 import seniorBallImg from '../assets/photosAmoverte/Tezza-9154.jpg';
@@ -69,6 +71,18 @@ const therapists: Record<string, ServiceTherapist> = {
     role: 'Fisioterapeuta Deportivo',
     image: williamImg,
   },
+  america: {
+    id: 'america',
+    name: 'América',
+    role: 'Fisioterapeuta Geriátrica',
+    image: americaImg,
+  },
+  fernanda: {
+    id: 'fernanda',
+    name: 'María Fernanda Ferrer Rabanales',
+    role: 'Fisioterapeuta Deportiva',
+    image: fernandaImg,
+  },
 };
 
 const services: Service[] = [
@@ -93,6 +107,8 @@ const services: Service[] = [
       therapists.abel,
       therapists.cesar,
       therapists.william,
+      therapists.america,
+      therapists.fernanda,
     ],
   },
   {
@@ -110,7 +126,7 @@ const services: Service[] = [
       'Ejercicios funcionales para autonomía e independencia en el hogar',
       'Movilidad articular suave y fortalecimiento adaptado',
     ],
-    therapists: [therapists.diana],
+    therapists: [therapists.diana, therapists.america],
   },
   {
     id: 'terapia-geriatrica',
@@ -127,7 +143,7 @@ const services: Service[] = [
       'Manejo del dolor crónico articular (artrosis/artritis)',
       'Atención en camilla y seguimiento humano especializado',
     ],
-    therapists: [therapists.diana],
+    therapists: [therapists.diana, therapists.america],
   },
   {
     id: 'fisioterapia-deportiva',
@@ -149,6 +165,7 @@ const services: Service[] = [
       therapists.cesar,
       therapists.william,
       therapists.abel,
+      therapists.fernanda,
     ],
   },
   {
@@ -166,7 +183,12 @@ const services: Service[] = [
       'Reentrenamiento del gesto y control neuromuscular',
       'Prevención de re-lesiones bajo demandas reales de carga',
     ],
-    therapists: [therapists.cesar, therapists.diego, therapists.william],
+    therapists: [
+      therapists.cesar,
+      therapists.diego,
+      therapists.william,
+      therapists.fernanda,
+    ],
   },
   {
     id: 'terapia-atm',
@@ -239,6 +261,7 @@ const services: Service[] = [
       therapists.cesar,
       therapists.william,
       therapists.abel,
+      therapists.fernanda,
     ],
   },
   {
@@ -261,6 +284,7 @@ const services: Service[] = [
       therapists.cesar,
       therapists.william,
       therapists.abel,
+      therapists.fernanda,
     ],
   },
 ];
@@ -331,7 +355,8 @@ function Services() {
       component="section"
       id="servicios"
       sx={{
-        py: { xs: 8, md: 14 },
+        pt: { xs: 7, md: 10 },
+        pb: { xs: 2.5, md: 3 },
         width: '100%',
         bgcolor: '#FAF9F6',
         position: 'relative',
